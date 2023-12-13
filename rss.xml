@@ -4,7 +4,7 @@
 <title><![CDATA[DyiShiou.info]]></title>
 <description><![CDATA[DyiShiou.info]]></description>
 <link>https://spcmxxd.github.io/</link>
-<lastBuildDate>Wed, 13 Dec 2023 18:56:33 +0800</lastBuildDate>
+<lastBuildDate>Wed, 13 Dec 2023 19:20:21 +0800</lastBuildDate>
 <item>
   <title><![CDATA[成为一个 RSS 节点]]></title>
   <description><![CDATA[
@@ -44,12 +44,12 @@ Happy Hacking!
 <item>
   <title><![CDATA[Emacs Installation]]></title>
   <description><![CDATA[
-<div id="outline-container-org09ec92b" class="outline-2">
-<h2 id="org09ec92b"><span class="section-number-2">1.</span> macOS</h2>
+<div id="outline-container-orgdd83c65" class="outline-2">
+<h2 id="orgdd83c65"><span class="section-number-2">1.</span> macOS</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org7aaff3f" class="outline-3">
-<h3 id="org7aaff3f"><span class="section-number-3">1.1.</span> REFERENCE</h3>
+<div id="outline-container-org6639c84" class="outline-3">
+<h3 id="org6639c84"><span class="section-number-3">1.1.</span> REFERENCE</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><a href="https://emacs-china.org/t/macos-emacs/23259">非程序员写的 macOS 版 Emacs 构建脚本</a></li>
@@ -62,15 +62,15 @@ Happy Hacking!
 </div>
 </div>
 </div>
-<div id="outline-container-orgacef161" class="outline-2">
-<h2 id="orgacef161"><span class="section-number-2">2.</span> Ubuntu</h2>
+<div id="outline-container-org2a863a7" class="outline-2">
+<h2 id="org2a863a7"><span class="section-number-2">2.</span> Ubuntu</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 记录 Ubuntu 编译 Emacs 的过程是有意义的， 因为 Ubuntu 的 Emacs 版本通常相对落后， 而 EAF 等框架需要较高版本的 Emacs 才能良好运行
 </p>
 </div>
-<div id="outline-container-orgb125bbd" class="outline-3">
-<h3 id="orgb125bbd"><span class="section-number-3">2.1.</span> 换源</h3>
+<div id="outline-container-orgda80d27" class="outline-3">
+<h3 id="orgda80d27"><span class="section-number-3">2.1.</span> 换源</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 修改 <code>/etc/apt/sources.list</code> 配置内容如下
@@ -98,8 +98,8 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted unive
 </p>
 </div>
 </div>
-<div id="outline-container-orgc5e58a1" class="outline-3">
-<h3 id="orgc5e58a1"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
+<div id="outline-container-org735274a" class="outline-3">
+<h3 id="org735274a"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install build-essential autoconf
@@ -123,8 +123,8 @@ sudo make install
 </div>
 </div>
 </div>
-<div id="outline-container-org65896d6" class="outline-3">
-<h3 id="org65896d6"><span class="section-number-3">2.3.</span> REFERENCE</h3>
+<div id="outline-container-org95becfe" class="outline-3">
+<h3 id="org95becfe"><span class="section-number-3">2.3.</span> REFERENCE</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li><a href="https://practical.li/blog/posts/build-emacs-from-source-on-ubuntu-linux/">Build Emacs from source on Ubuntu Linux</a></li>
