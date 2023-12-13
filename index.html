@@ -6,127 +6,29 @@
       type="application/rss+xml"
       href="https://spcmxxd.github.io/rss.xml"
       title="RSS feed for https://spcmxxd.github.io/">
-<title>dyi.shiou</title>
-<meta name="author" content="Dyi Shiou">
-      <meta name="referrer" content="no-referrer">
-      <link href= "static/style.css" rel="stylesheet" type="text/css" />
-      <link rel="icon" href="static/favicon.ico">
-      <link rel="apple-touch-icon-precomposed" href="static/favicon-152.png">
-      <link rel="msapplication-TitleImage" href="static/favicon-144.png">
-      <link rel="msapplication-TitleColor" href="#0141ff">
-      <script src="static/katex.min.js"></script>
-      <script src="static/auto-render.min.js"></script>
-      <script src="static/lightbox.js"></script>
-      <link rel="stylesheet" href="static/katex.min.css">
-      <script>document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body); });</script>
-      <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
-      <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1"></head>
+<title>DyiShiou.info</title>
+<meta name="author" content="wangzh">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/toc.js" type="text/javascript" defer></script>
+<script src="static/others.js" type="text/javascript" defer></script>
+<link rel="icon" href="static/favicon.ico"></head>
 <body>
-<div id="preamble" class="status"><div class="header">
-        <a href="https://spcmxxd.github.io/index.html">DyiShiou.info</a>
-        <div class="sitelinks">
-          <a href="https://spcmxxd.github.io/index.html">Home</a> |
-          <a href="https://spcmxxd.github.io/tags.html">Tags</a> |
-          <a href="https://spcmxxd.github.io/rss.xml">Feeds</a> |
-          <a href="https://spcmxxd.github.io/about.html">About</a>
-        </div>
-      </div></div>
+<div id="preamble" class="status">
+<div>
+  <center>
+    <div id="xuan"></div>
+  </center>
+</div>
+<div id="blog-nav">
+  <a href="/">Index</a>
+  <a href="/tags.html">Tags</a>
+  <a href="/about.html">About</a>
+</div>
+</div>
 <div id="content">
-
-<div class="post-date">13 12月 2023</div><h1 class="post-title"><a href="https://spcmxxd.github.io/2023-12-13-emacs-installation.html">Emacs Installation</a></h1>
-<div id="outline-container-org7b2bd43" class="outline-2">
-<h2 id="org7b2bd43">macOS</h2>
-<div class="outline-text-2" id="text-org7b2bd43">
-</div>
-<div id="outline-container-orgb16132e" class="outline-3">
-<h3 id="orgb16132e">REFERENCE</h3>
-<div class="outline-text-3" id="text-orgb16132e">
-<ul class="org-ul">
-<li><a href="https://emacs-china.org/t/macos-emacs/23259">非程序员写的 macOS 版 Emacs 构建脚本</a></li>
-<li><a href="https://zilongshanren.com/post/setup-macbook-pro-m1/">配置全新的 Macbook Pro M1 下 Emacs 开发环境</a></li>
-<li><a href="https://emacs-china.org/t/macbook-pro-m1-2s-1s/21313">Macbook Pro M1 配置全新的开发环境， 启动时间从 2s 减少到 1s 了， 爽</a></li>
-</ul>
-<p>
-<a href="https://github.com/bastibe/bastibe.github.com.git">https://github.com/bastibe/bastibe.github.com.git</a>
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org678a268" class="outline-2">
-<h2 id="org678a268">Ubuntu</h2>
-<div class="outline-text-2" id="text-org678a268">
-<p>
-记录 Ubuntu 编译 Emacs 的过程是有意义的， 因为 Ubuntu 的 Emacs 版本通常相对落后， 而 EAF 等框架需要较高版本的 Emacs 才能良好运行
-</p>
-</div>
-<div id="outline-container-org7d197ca" class="outline-3">
-<h3 id="org7d197ca">换源</h3>
-<div class="outline-text-3" id="text-org7d197ca">
-<p>
-修改 <code>/etc/apt/sources.list</code> 配置内容如下
-</p>
-<pre class="example">
-# 默认注释了源码仓库， 如有需要可自行取消注释
-deb https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
-
-deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
-
-deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
-
-deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
-
-# 预发布软件源， 不建议启用
-deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
-deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
-</pre>
-<p>
-这一步是为执行命令 <code>sudo apt build-dep emacs</code> 做准备
-</p>
-</div>
-</div>
-<div id="outline-container-org1b89a08" class="outline-3">
-<h3 id="org1b89a08">编译 emacs-29 (2023-07-03)</h3>
-<div class="outline-text-3" id="text-org1b89a08">
-<div class="org-src-container">
-<pre class="src src-bash">sudo apt install build-essential autoconf
-
-sudo apt build-dep emacs
-
-sudo apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev gnutls-bin libtree-sitter-dev texinfo libgtk-3-dev
-
-git clone --branch emacs-29 git://git.savannah.gnu.org/emacs.git emacs-29
-
-<span style="color: #ffb86c;">cd</span> emacs-29
-
-./autogen.sh
-
-./configure --with-native-comilation=aot
-
-make -j12
-
-sudo make install
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-org60c1866" class="outline-3">
-<h3 id="org60c1866">REFERENCE</h3>
-<div class="outline-text-3" id="text-org60c1866">
-<ul class="org-ul">
-<li><a href="https://practical.li/blog/posts/build-emacs-from-source-on-ubuntu-linux/">Build Emacs from source on Ubuntu Linux</a></li>
-<li><a href="http://lixingcong.github.io/2016/04/19/compile-emacs-on-linux/">记一次编译 Emacs 的过程</a></li>
-<li><a href="https://askubuntu.com/questions/864259/problem-compiling-emacs-no-x-development-libraries-were-found">Problem compiling Emacs (no X development libraries were found)</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="taglist"><a href="https://spcmxxd.github.io/tags.html">Tags</a>: <a href="https://spcmxxd.github.io/tag-emacs.html">emacs</a> </div><div id="archive">
-<a href="https://spcmxxd.github.io/archive.html">Other posts</a>
-</div>
+<h1 class="title">Archive</h1>
+<div class="post-date">13 12月 2023</div><h2 class="post-title"><a href="https://spcmxxd.github.io/2023-12-13-emacs-installation.html">Emacs Installation</a></h2>
 </div>
 <div id="postamble" class="status">
 <div id="archive">
