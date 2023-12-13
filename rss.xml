@@ -4,7 +4,7 @@
 <title><![CDATA[DyiShiou.info]]></title>
 <description><![CDATA[DyiShiou.info]]></description>
 <link>https://spcmxxd.github.io/</link>
-<lastBuildDate>Wed, 13 Dec 2023 15:22:30 +0800</lastBuildDate>
+<lastBuildDate>Wed, 13 Dec 2023 15:29:32 +0800</lastBuildDate>
 <item>
   <title><![CDATA[Emacs Installation]]></title>
   <description><![CDATA[
@@ -12,27 +12,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb2876d3">1. macOS</a>
+<li><a href="#orgb565ff8">1. macOS</a>
 <ul>
-<li><a href="#orgf12f223">1.1. REFERENCE</a></li>
+<li><a href="#orgdf0f629">1.1. REFERENCE</a></li>
 </ul>
 </li>
-<li><a href="#orgc35cc42">2. Ubuntu</a>
+<li><a href="#orgc671538">2. Ubuntu</a>
 <ul>
-<li><a href="#org8db8681">2.1. 换源</a></li>
-<li><a href="#org0a93869">2.2. 编译 emacs-29 (2023-07-03)</a></li>
-<li><a href="#orgc538fe1">2.3. REFERENCE</a></li>
+<li><a href="#org468c966">2.1. 换源</a></li>
+<li><a href="#orgec018bb">2.2. 编译 emacs-29 (2023-07-03)</a></li>
+<li><a href="#org2dbe498">2.3. REFERENCE</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orgb2876d3" class="outline-2">
-<h2 id="orgb2876d3"><span class="section-number-2">1.</span> macOS</h2>
+<div id="outline-container-orgb565ff8" class="outline-2">
+<h2 id="orgb565ff8"><span class="section-number-2">1.</span> macOS</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgf12f223" class="outline-3">
-<h3 id="orgf12f223"><span class="section-number-3">1.1.</span> REFERENCE</h3>
+<div id="outline-container-orgdf0f629" class="outline-3">
+<h3 id="orgdf0f629"><span class="section-number-3">1.1.</span> REFERENCE</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><a href="https://emacs-china.org/t/macos-emacs/23259">非程序员写的 macOS 版 Emacs 构建脚本</a></li>
@@ -45,15 +45,15 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgc35cc42" class="outline-2">
-<h2 id="orgc35cc42"><span class="section-number-2">2.</span> Ubuntu</h2>
+<div id="outline-container-orgc671538" class="outline-2">
+<h2 id="orgc671538"><span class="section-number-2">2.</span> Ubuntu</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 记录 Ubuntu 编译 Emacs 的过程是有意义的， 因为 Ubuntu 的 Emacs 版本通常相对落后， 而 EAF 等框架需要较高版本的 Emacs 才能良好运行
 </p>
 </div>
-<div id="outline-container-org8db8681" class="outline-3">
-<h3 id="org8db8681"><span class="section-number-3">2.1.</span> 换源</h3>
+<div id="outline-container-org468c966" class="outline-3">
+<h3 id="org468c966"><span class="section-number-3">2.1.</span> 换源</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 修改 <code>/etc/apt/sources.list</code> 配置内容如下
@@ -81,8 +81,8 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted unive
 </p>
 </div>
 </div>
-<div id="outline-container-org0a93869" class="outline-3">
-<h3 id="org0a93869"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
+<div id="outline-container-orgec018bb" class="outline-3">
+<h3 id="orgec018bb"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install build-essential autoconf
@@ -106,8 +106,8 @@ sudo make install
 </div>
 </div>
 </div>
-<div id="outline-container-orgc538fe1" class="outline-3">
-<h3 id="orgc538fe1"><span class="section-number-3">2.3.</span> REFERENCE</h3>
+<div id="outline-container-org2dbe498" class="outline-3">
+<h3 id="org2dbe498"><span class="section-number-3">2.3.</span> REFERENCE</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li><a href="https://practical.li/blog/posts/build-emacs-from-source-on-ubuntu-linux/">Build Emacs from source on Ubuntu Linux</a></li>
