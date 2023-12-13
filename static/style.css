@@ -428,3 +428,8 @@ sup .footnum {
 		color: #a00
 	}
 }
+
+.post-divider {
+  border: 1px solid #ccc; /* 横线的样式 */
+  margin: 20px 0; /* 控制分割线上下的间距 */
+}
