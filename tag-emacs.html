@@ -23,9 +23,99 @@
   </div>
 </div>
 <div id="content">
-<h1 class="title">Posts tagged "emacs":</h1><h2 class="post-title"><a href="https://spcmxxd.github.io/2023-12-13-emacs-installation.html">Emacs Installation</a></h2><div class="post-date">13 12月 2023</div><p>
+<h1 class="title">Posts tagged "emacs":</h1>
+<div class="post-date">13 12月 2023</div><h1 class="post-title"><a href="https://spcmxxd.github.io/2023-12-13-emacs-installation.html">Emacs Installation</a></h1>
+<div id="outline-container-org8fcba96" class="outline-2">
+<h2 id="org8fcba96"><span class="section-number-2">1.</span> macOS</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org30aeac2" class="outline-3">
+<h3 id="org30aeac2"><span class="section-number-3">1.1.</span> REFERENCE</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><a href="https://emacs-china.org/t/macos-emacs/23259">非程序员写的 macOS 版 Emacs 构建脚本</a></li>
+<li><a href="https://zilongshanren.com/post/setup-macbook-pro-m1/">配置全新的 Macbook Pro M1 下 Emacs 开发环境</a></li>
+<li><a href="https://emacs-china.org/t/macbook-pro-m1-2s-1s/21313">Macbook Pro M1 配置全新的开发环境， 启动时间从 2s 减少到 1s 了， 爽</a></li>
+</ul>
+<p>
 <a href="https://github.com/bastibe/bastibe.github.com.git">https://github.com/bastibe/bastibe.github.com.git</a>
-</p>(...)<div class="taglist"><a href="https://spcmxxd.github.io/tags.html">Tags</a>: <a href="https://spcmxxd.github.io/tag-emacs.html">emacs</a> </div><div id="archive">
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcd8ed11" class="outline-2">
+<h2 id="orgcd8ed11"><span class="section-number-2">2.</span> Ubuntu</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+记录 Ubuntu 编译 Emacs 的过程是有意义的， 因为 Ubuntu 的 Emacs 版本通常相对落后， 而 EAF 等框架需要较高版本的 Emacs 才能良好运行
+</p>
+</div>
+<div id="outline-container-org169e60c" class="outline-3">
+<h3 id="org169e60c"><span class="section-number-3">2.1.</span> 换源</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+修改 <code>/etc/apt/sources.list</code> 配置内容如下
+</p>
+<pre class="example">
+# 默认注释了源码仓库， 如有需要可自行取消注释
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+
+# 预发布软件源， 不建议启用
+deb https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse
+</pre>
+<p>
+这一步是为执行命令 <code>sudo apt build-dep emacs</code> 做准备
+</p>
+</div>
+</div>
+<div id="outline-container-org21796b3" class="outline-3">
+<h3 id="org21796b3"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-bash">sudo apt install build-essential autoconf
+
+sudo apt build-dep emacs
+
+sudo apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev gnutls-bin libtree-sitter-dev texinfo libgtk-3-dev
+
+git clone --branch emacs-29 git://git.savannah.gnu.org/emacs.git emacs-29
+
+<span style="color: #fe8019;">cd</span> emacs-29
+
+./autogen.sh
+
+./configure --with-native-comilation=aot
+
+make -j12
+
+sudo make install
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd13f253" class="outline-3">
+<h3 id="orgd13f253"><span class="section-number-3">2.3.</span> REFERENCE</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li><a href="https://practical.li/blog/posts/build-emacs-from-source-on-ubuntu-linux/">Build Emacs from source on Ubuntu Linux</a></li>
+<li><a href="http://lixingcong.github.io/2016/04/19/compile-emacs-on-linux/">记一次编译 Emacs 的过程</a></li>
+<li><a href="https://askubuntu.com/questions/864259/problem-compiling-emacs-no-x-development-libraries-were-found">Problem compiling Emacs (no X development libraries were found)</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="taglist"><a href="https://spcmxxd.github.io/tags.html">Tags</a>: <a href="https://spcmxxd.github.io/tag-emacs.html">emacs</a> </div><div id="archive">
 <a href="https://spcmxxd.github.io/archive.html">Other posts</a>
 </div>
 </div>
