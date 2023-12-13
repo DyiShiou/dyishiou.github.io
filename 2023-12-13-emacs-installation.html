@@ -8,36 +8,53 @@
       href="https://spcmxxd.github.io/rss.xml"
       title="RSS feed for https://spcmxxd.github.io/">
 <title>Emacs Installation</title>
-<meta name="author" content="Dyi Shiou">
-      <meta name="referrer" content="no-referrer">
-      <link href= "static/style.css" rel="stylesheet" type="text/css" />
-      <link rel="icon" href="static/favicon.ico">
-      <link rel="apple-touch-icon-precomposed" href="static/favicon-152.png">
-      <link rel="msapplication-TitleImage" href="static/favicon-144.png">
-      <link rel="msapplication-TitleColor" href="#0141ff">
-      <script src="static/katex.min.js"></script>
-      <script src="static/auto-render.min.js"></script>
-      <script src="static/lightbox.js"></script>
-      <link rel="stylesheet" href="static/katex.min.css">
-      <script>document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body); });</script>
-      <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8">
-      <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1"></head>
+<meta name="author" content="wangzh">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/toc.js" type="text/javascript" defer></script>
+<script src="static/others.js" type="text/javascript" defer></script>
+<link rel="icon" href="static/favicon.ico"></head>
 <body>
-<div id="preamble" class="status"><div class="header">
-        <a href="https://bastibe.de">Basti's Scratchpad on the Internet</a>
-        <div class="sitelinks">
-          <a href="https://github.com/bastibe">Github</a> | <a href="https://bastibe.de/projects.html">Projects</a>
-        </div>
-      </div></div>
+<div id="preamble" class="status">
+<div>
+  <center>
+    <div id="xuan"></div>
+  </center>
+</div>
+<div id="blog-nav">
+  <a href="/">Index</a>
+  <a href="/tags.html">Tags</a>
+  <a href="/about.html">About</a>
+</div>
+</div>
 <div id="content">
 <div class="post-date">13 12月 2023</div><h1 class="post-title"><a href="https://spcmxxd.github.io/2023-12-13-emacs-installation.html">Emacs Installation</a></h1>
-<div id="outline-container-org7b2bd43" class="outline-2">
-<h2 id="org7b2bd43">macOS</h2>
-<div class="outline-text-2" id="text-org7b2bd43">
+<nav id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb2876d3">1. macOS</a>
+<ul>
+<li><a href="#orgf12f223">1.1. REFERENCE</a></li>
+</ul>
+</li>
+<li><a href="#orgc35cc42">2. Ubuntu</a>
+<ul>
+<li><a href="#org8db8681">2.1. 换源</a></li>
+<li><a href="#org0a93869">2.2. 编译 emacs-29 (2023-07-03)</a></li>
+<li><a href="#orgc538fe1">2.3. REFERENCE</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<div id="outline-container-orgb16132e" class="outline-3">
-<h3 id="orgb16132e">REFERENCE</h3>
-<div class="outline-text-3" id="text-orgb16132e">
+</nav>
+<div id="outline-container-orgb2876d3" class="outline-2">
+<h2 id="orgb2876d3"><span class="section-number-2">1.</span> macOS</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgf12f223" class="outline-3">
+<h3 id="orgf12f223"><span class="section-number-3">1.1.</span> REFERENCE</h3>
+<div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><a href="https://emacs-china.org/t/macos-emacs/23259">非程序员写的 macOS 版 Emacs 构建脚本</a></li>
 <li><a href="https://zilongshanren.com/post/setup-macbook-pro-m1/">配置全新的 Macbook Pro M1 下 Emacs 开发环境</a></li>
@@ -49,16 +66,16 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org678a268" class="outline-2">
-<h2 id="org678a268">Ubuntu</h2>
-<div class="outline-text-2" id="text-org678a268">
+<div id="outline-container-orgc35cc42" class="outline-2">
+<h2 id="orgc35cc42"><span class="section-number-2">2.</span> Ubuntu</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 记录 Ubuntu 编译 Emacs 的过程是有意义的， 因为 Ubuntu 的 Emacs 版本通常相对落后， 而 EAF 等框架需要较高版本的 Emacs 才能良好运行
 </p>
 </div>
-<div id="outline-container-org7d197ca" class="outline-3">
-<h3 id="org7d197ca">换源</h3>
-<div class="outline-text-3" id="text-org7d197ca">
+<div id="outline-container-org8db8681" class="outline-3">
+<h3 id="org8db8681"><span class="section-number-3">2.1.</span> 换源</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 修改 <code>/etc/apt/sources.list</code> 配置内容如下
 </p>
@@ -85,9 +102,9 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted unive
 </p>
 </div>
 </div>
-<div id="outline-container-org1b89a08" class="outline-3">
-<h3 id="org1b89a08">编译 emacs-29 (2023-07-03)</h3>
-<div class="outline-text-3" id="text-org1b89a08">
+<div id="outline-container-org0a93869" class="outline-3">
+<h3 id="org0a93869"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
+<div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install build-essential autoconf
 
@@ -110,9 +127,9 @@ sudo make install
 </div>
 </div>
 </div>
-<div id="outline-container-org60c1866" class="outline-3">
-<h3 id="org60c1866">REFERENCE</h3>
-<div class="outline-text-3" id="text-org60c1866">
+<div id="outline-container-orgc538fe1" class="outline-3">
+<h3 id="orgc538fe1"><span class="section-number-3">2.3.</span> REFERENCE</h3>
+<div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li><a href="https://practical.li/blog/posts/build-emacs-from-source-on-ubuntu-linux/">Build Emacs from source on Ubuntu Linux</a></li>
 <li><a href="http://lixingcong.github.io/2016/04/19/compile-emacs-on-linux/">记一次编译 Emacs 的过程</a></li>
