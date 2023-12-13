@@ -8,7 +8,7 @@
       href="https://spcmxxd.github.io/rss.xml"
       title="RSS feed for https://spcmxxd.github.io/">
 <title>Emacs Installation</title>
-<meta name="author" content="dyi.shiou">
+<meta name="author" content="wangzh">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href= "static/style.css" rel="stylesheet" type="text/css" />
 <script src="static/toc.js" type="text/javascript" defer></script>
@@ -16,10 +16,14 @@
 <link rel="icon" href="static/favicon.ico"></head>
 <body>
 <div id="preamble" class="status">
+<div>
+  <center>
+    <div id="xuan"></div>
+  </center>
+</div>
 <div id="blog-nav">
-  <a href="/index.html">Home</a>
+  <a href="/">Index</a>
   <a href="/tags.html">Tags</a>
-  <a href="/rss.xml">Feeds</a>
   <a href="/about.html">About</a>
 </div>
 </div>
@@ -29,27 +33,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2af01d8">1. macOS</a>
+<li><a href="#org53ea3ca">1. macOS</a>
 <ul>
-<li><a href="#orgbff7cd3">1.1. REFERENCE</a></li>
+<li><a href="#org9060cdd">1.1. REFERENCE</a></li>
 </ul>
 </li>
-<li><a href="#orgaba090e">2. Ubuntu</a>
+<li><a href="#org92a3ff5">2. Ubuntu</a>
 <ul>
-<li><a href="#org4af5ae0">2.1. 换源</a></li>
-<li><a href="#org21cd578">2.2. 编译 emacs-29 (2023-07-03)</a></li>
-<li><a href="#org1a31b4f">2.3. REFERENCE</a></li>
+<li><a href="#org9c980e8">2.1. 换源</a></li>
+<li><a href="#orga246d6e">2.2. 编译 emacs-29 (2023-07-03)</a></li>
+<li><a href="#org029466a">2.3. REFERENCE</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org2af01d8" class="outline-2">
-<h2 id="org2af01d8"><span class="section-number-2">1.</span> macOS</h2>
+<div id="outline-container-org53ea3ca" class="outline-2">
+<h2 id="org53ea3ca"><span class="section-number-2">1.</span> macOS</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgbff7cd3" class="outline-3">
-<h3 id="orgbff7cd3"><span class="section-number-3">1.1.</span> REFERENCE</h3>
+<div id="outline-container-org9060cdd" class="outline-3">
+<h3 id="org9060cdd"><span class="section-number-3">1.1.</span> REFERENCE</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><a href="https://emacs-china.org/t/macos-emacs/23259">非程序员写的 macOS 版 Emacs 构建脚本</a></li>
@@ -62,15 +66,15 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgaba090e" class="outline-2">
-<h2 id="orgaba090e"><span class="section-number-2">2.</span> Ubuntu</h2>
+<div id="outline-container-org92a3ff5" class="outline-2">
+<h2 id="org92a3ff5"><span class="section-number-2">2.</span> Ubuntu</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 记录 Ubuntu 编译 Emacs 的过程是有意义的， 因为 Ubuntu 的 Emacs 版本通常相对落后， 而 EAF 等框架需要较高版本的 Emacs 才能良好运行
 </p>
 </div>
-<div id="outline-container-org4af5ae0" class="outline-3">
-<h3 id="org4af5ae0"><span class="section-number-3">2.1.</span> 换源</h3>
+<div id="outline-container-org9c980e8" class="outline-3">
+<h3 id="org9c980e8"><span class="section-number-3">2.1.</span> 换源</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 修改 <code>/etc/apt/sources.list</code> 配置内容如下
@@ -98,8 +102,8 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted unive
 </p>
 </div>
 </div>
-<div id="outline-container-org21cd578" class="outline-3">
-<h3 id="org21cd578"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
+<div id="outline-container-orga246d6e" class="outline-3">
+<h3 id="orga246d6e"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install build-essential autoconf
@@ -123,8 +127,8 @@ sudo make install
 </div>
 </div>
 </div>
-<div id="outline-container-org1a31b4f" class="outline-3">
-<h3 id="org1a31b4f"><span class="section-number-3">2.3.</span> REFERENCE</h3>
+<div id="outline-container-org029466a" class="outline-3">
+<h3 id="org029466a"><span class="section-number-3">2.3.</span> REFERENCE</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li><a href="https://practical.li/blog/posts/build-emacs-from-source-on-ubuntu-linux/">Build Emacs from source on Ubuntu Linux</a></li>
@@ -136,6 +140,9 @@ sudo make install
 </div>
 <div class="taglist"><a href="https://spcmxxd.github.io/tags.html">Tags</a>: <a href="https://spcmxxd.github.io/tag-emacs.html">emacs</a> </div></div>
 <div id="postamble" class="status">
+<div id="archive">
+  <a href="https://spcmxxd.github.io/archive.html">Other posts</a>
+</div>
 <center><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="https://purl.org/dc/terms/" href="https://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">bastibe.de</span> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://bastibe.de" property="cc:attributionName" rel="cc:attributionURL">Bastian Bechtold</a> is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</center>
 </div>
 </body>
