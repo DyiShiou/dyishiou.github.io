@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-<title><![CDATA[DyiShiou.info]]></title>
-<description><![CDATA[DyiShiou.info]]></description>
-<link>https://spcmxxd.github.io/</link>
-<lastBuildDate>Wed, 13 Dec 2023 20:31:40 +0800</lastBuildDate>
+<title><![CDATA[dyi.shiou]]></title>
+<description><![CDATA[dyi.shiou]]></description>
+<link>https://dyishiou.github.io/</link>
+<lastBuildDate>Fri, 09 Feb 2024 08:53:56 +0800</lastBuildDate>
 <item>
   <title><![CDATA[成为一个 RSS 节点]]></title>
   <description><![CDATA[
@@ -35,21 +35,21 @@
 <p>
 Happy Hacking!
 </p>
-<div class="taglist"><a href="https://spcmxxd.github.io/tags.html">Tags</a>: <a href="https://spcmxxd.github.io/tag-blog.html">blog</a> </div>]]></description>
+<div class="taglist"><a href="https://dyishiou.github.io/tags.html">Tags</a>: <a href="https://dyishiou.github.io/tag-blog.html">blog</a> </div>]]></description>
   <category><![CDATA[blog]]></category>
-  <link>https://spcmxxd.github.io/2023-12-13-%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA-rss-%E8%8A%82%E7%82%B9.html</link>
-  <guid>https://spcmxxd.github.io/2023-12-13-%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA-rss-%E8%8A%82%E7%82%B9.html</guid>
+  <link>https://dyishiou.github.io/2023-12-13-%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA-rss-%E8%8A%82%E7%82%B9.html</link>
+  <guid>https://dyishiou.github.io/2023-12-13-%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA-rss-%E8%8A%82%E7%82%B9.html</guid>
   <pubDate>Wed, 13 Dec 2023 16:10:00 +0800</pubDate>
 </item>
 <item>
   <title><![CDATA[Emacs Installation]]></title>
   <description><![CDATA[
-<div id="outline-container-org80cfbf8" class="outline-2">
-<h2 id="org80cfbf8"><span class="section-number-2">1.</span> macOS</h2>
+<div id="outline-container-org67a3a0f" class="outline-2">
+<h2 id="org67a3a0f"><span class="section-number-2">1.</span> macOS</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org5580689" class="outline-3">
-<h3 id="org5580689"><span class="section-number-3">1.1.</span> REFERENCE</h3>
+<div id="outline-container-org774775f" class="outline-3">
+<h3 id="org774775f"><span class="section-number-3">1.1.</span> REFERENCE</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><a href="https://emacs-china.org/t/macos-emacs/23259">非程序员写的 macOS 版 Emacs 构建脚本</a></li>
@@ -62,15 +62,15 @@ Happy Hacking!
 </div>
 </div>
 </div>
-<div id="outline-container-org9cac113" class="outline-2">
-<h2 id="org9cac113"><span class="section-number-2">2.</span> Ubuntu</h2>
+<div id="outline-container-orgdfc68af" class="outline-2">
+<h2 id="orgdfc68af"><span class="section-number-2">2.</span> Ubuntu</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 记录 Ubuntu 编译 Emacs 的过程是有意义的， 因为 Ubuntu 的 Emacs 版本通常相对落后， 而 EAF 等框架需要较高版本的 Emacs 才能良好运行
 </p>
 </div>
-<div id="outline-container-org1db08e8" class="outline-3">
-<h3 id="org1db08e8"><span class="section-number-3">2.1.</span> 换源</h3>
+<div id="outline-container-org054d1ae" class="outline-3">
+<h3 id="org054d1ae"><span class="section-number-3">2.1.</span> 换源</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 修改 <code>/etc/apt/sources.list</code> 配置内容如下
@@ -98,8 +98,8 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ jammy-proposed main restricted unive
 </p>
 </div>
 </div>
-<div id="outline-container-org9d819ae" class="outline-3">
-<h3 id="org9d819ae"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
+<div id="outline-container-org13f38c8" class="outline-3">
+<h3 id="org13f38c8"><span class="section-number-3">2.2.</span> 编译 emacs-29 (2023-07-03)</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
 <pre class="src src-bash">sudo apt install build-essential autoconf
@@ -110,7 +110,7 @@ sudo apt install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev gnutls-b
 
 git clone --branch emacs-29 git://git.savannah.gnu.org/emacs.git emacs-29
 
-<span style="color: #fe8019;">cd</span> emacs-29
+<span style="color: #8f0075;">cd</span> emacs-29
 
 ./autogen.sh
 
@@ -123,8 +123,8 @@ sudo make install
 </div>
 </div>
 </div>
-<div id="outline-container-org93a9038" class="outline-3">
-<h3 id="org93a9038"><span class="section-number-3">2.3.</span> REFERENCE</h3>
+<div id="outline-container-org5ea7367" class="outline-3">
+<h3 id="org5ea7367"><span class="section-number-3">2.3.</span> REFERENCE</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li><a href="https://practical.li/blog/posts/build-emacs-from-source-on-ubuntu-linux/">Build Emacs from source on Ubuntu Linux</a></li>
@@ -134,10 +134,10 @@ sudo make install
 </div>
 </div>
 </div>
-<div class="taglist"><a href="https://spcmxxd.github.io/tags.html">Tags</a>: <a href="https://spcmxxd.github.io/tag-emacs.html">emacs</a> </div>]]></description>
+<div class="taglist"><a href="https://dyishiou.github.io/tags.html">Tags</a>: <a href="https://dyishiou.github.io/tag-emacs.html">emacs</a> </div>]]></description>
   <category><![CDATA[emacs]]></category>
-  <link>https://spcmxxd.github.io/2023-12-13-emacs-installation.html</link>
-  <guid>https://spcmxxd.github.io/2023-12-13-emacs-installation.html</guid>
+  <link>https://dyishiou.github.io/2023-12-13-emacs-installation.html</link>
+  <guid>https://dyishiou.github.io/2023-12-13-emacs-installation.html</guid>
   <pubDate>Wed, 13 Dec 2023 13:17:00 +0800</pubDate>
 </item>
 </channel>
