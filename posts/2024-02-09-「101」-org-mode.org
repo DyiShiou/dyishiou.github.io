@@ -1,0 +1,10 @@
+#+title: 「101」 Org Mode
+#+date: <2024-02-09 09:03>
+#+description: 记录 Org Mode 的配置方式
+#+filetags: :emacs:
+
+* Headline
+- [X] [[https://orgmode.org/manual/Dynamic-Headline-Numbering.html][Enable dynamic headline numbering]]
+#+begin_src lisp
+(setq org-startup-numerated t)
+#+end_src

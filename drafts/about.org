@@ -8,15 +8,15 @@
 </figure>
 #+end_export
 
-Hi, I'm Bastian, dad, hobby photographer, software developer, and
-signal processing scientist in Germany.
+Hi, I'm Bastian, dad, hobby photographer, AI intern, and
+signal processing scientist.
 
 Both photography and programming are about telling stories. Expressing
 a complex algorithm in simple terms, or stunning vista in a compelling
 picture. Finding order and simplicity in a chaotic scene or code base.
 Therein lies the challenge and joy of life.
 
-You can get in touch with me at *echtholz* at *mailbox* dot *org*.
+You can get in touch with me at *dyi.shiou* at *gmail* dot *com*.
 
 -----
 
@@ -38,7 +38,7 @@ library for running Matlab code from Python, all released as Open
 Source software.
 
 *MASTER OF SCIENCE*, Carl von Ossietzky University Oldenburg (2012-2014) \\
-*BACHELOR OF ENGINEERING*, University of Applied Sciences Oldenburg (2006-2010)
+*BACHELOR OF ENGINEERING*, Tsinghua University (2016-2020)
 
 Two parts of /Hearing Technology and Audiology/, an engineering course
 about all things audio across medicine, acoustics, electronics, and

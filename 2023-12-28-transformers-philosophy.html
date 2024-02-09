@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="alternate"
+      type="application/rss+xml"
+      href="https://dyishiou.github.io/rss.xml"
+      title="RSS feed for https://dyishiou.github.io/">
+<title>HuggingFace Transformers 设计哲学</title>
+<meta name="author" content="dyi.shiou">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href= "static/style.css" rel="stylesheet" type="text/css" />
+<script src="static/toc.js" type="text/javascript" defer></script>
+<script src="static/others.js" type="text/javascript" defer></script>
+<link rel="icon" href="static/favicon.ico"></head>
+<body>
+<div id="preamble" class="status"><div id="blog-nav">
+<a href="https://dyishiou.github.io/index.html">Home</a>
+<a href="https://dyishiou.github.io/tags.html">Tags</a>
+<a href="https://dyishiou.github.io/rss.xml">Feeds</a>
+<a href="https://dyishiou.github.io/about.html">About</a></div></div>
+<div id="content">
+<div class="post-date">28 Dec 2023</div><h1 class="post-title"><a href="https://dyishiou.github.io/2023-12-28-transformers-philosophy.html">HuggingFace Transformers 设计哲学</a></h1>
+
+<div id="outline-container-org3f469e6" class="outline-2">
+<h2 id="org3f469e6"><span class="section-number-2">1.</span> 面向群体</h2>
+<div class="outline-text-2" id="text-1">
+<ol class="org-ol">
+<li>致力于使用、研究、拓展大规模 Transformer 模型的机器学习研究者</li>
+<li>希望微调或在生产中部署大规模 Transformer 模型的实践者</li>
+<li>只想下载一个预训练模型并用于解决给定机器学习任务的工程师</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgfa828bc" class="outline-2">
+<h2 id="orgfa828bc"><span class="section-number-2">2.</span> 两个核心目标</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga9ef61e" class="outline-3">
+<h3 id="orga9ef61e"><span class="section-number-3">2.1.</span> 简单和快捷的使用体验</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>最大程度地限制用户侧的抽象概念, 只有三个标准类: <a href="https://huggingface.co/docs/transformers/main_classes/configuration">配置</a>、<a href="https://huggingface.co/docs/transformers/main_classes/model">模型</a>、预处理类。预处理类包括NLP的<a href="https://huggingface.co/docs/transformers/main_classes/tokenizer">Tokenizer</a>, Vision的<a href="https://huggingface.co/docs/transformers/main_classes/image_processor">image processor</a>, audio的<a href="https://huggingface.co/docs/transformers/main_classes/feature_extractor">feature extractor</a>, multimodal的<a href="https://huggingface.co/docs/transformers/main_classes/processors">processor</a></li>
+<li>所有类均可以通过 <code>from_pretrained()</code> 方法从预训练实例初始化, <code>from_pretrained()</code> 方法会从 HuggingFace Hub 或 checkpoint 下载、缓存、加载相关的实例和数据, 包括配置的超参数、tokenizer的词表、模型权重</li>
+<li>在 配置、模型、预处理 这三个基类之上, 提供 <code>pipeline()</code> 用于模型推理、 <code>Trainer</code> 用于快速训练和微调 PyTorch 模型</li>
+<li>Transformers 库并非构建神经网络的模块工具箱, 若想要基于 Transformers 进行扩展或构建, 只需要使用 Python, PyTorch 的常规模块, 并继承 Transformers 库的基类以复用模型加载、模型保存的功能</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgeeae503" class="outline-3">
+<h3 id="orgeeae503"><span class="section-number-3">2.2.</span> 提供具备接近原始模型性能的SOTA模型</h3>
+<div class="outline-text-3" id="text-2-2">
+<ol class="org-ol">
+<li>每种架构至少具备一个可以复现官方结果的示例</li>
+<li>与原始代码尽可能贴近</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org72dd41e" class="outline-2">
+<h2 id="org72dd41e"><span class="section-number-2">3.</span> 其他目标</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org9f602d5" class="outline-3">
+<h3 id="org9f602d5"><span class="section-number-3">3.1.</span> 一致地暴露模型内部结构</h3>
+<div class="outline-text-3" id="text-3-1">
+<ol class="org-ol">
+<li>提供一个API, 访问全部隐藏状态和注意力权重</li>
+<li>提供标准化的 预处理类和基类模型 API, 便于在不同模型间切换</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org54665f9" class="outline-3">
+<h3 id="org54665f9"><span class="section-number-3">3.2.</span> 包含用于微调和研究模型的有效工具</h3>
+<div class="outline-text-3" id="text-3-2">
+<ol class="org-ol">
+<li>一种简单、一致的向词表和embeddings添加新token, 并用于微调的方式</li>
+<li>掩码 和 剪枝 Transformer head 的简单方法</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org336be45" class="outline-3">
+<h3 id="org336be45"><span class="section-number-3">3.3.</span> 在 PyTorch, TensorFlow, Flax 间方便地切换, 支持训练和推理使用不同框架</h3>
+</div>
+</div>
+
+<div id="outline-container-orgccd5150" class="outline-2">
+<h2 id="orgccd5150"><span class="section-number-2">4.</span> 主要概念</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+HuggingFace Transformers 库中的每个模型建立在三个类之上
+</p>
+</div>
+<div id="outline-container-org2958584" class="outline-3">
+<h3 id="org2958584"><span class="section-number-3">4.1.</span> Model classes</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+与 Transformers 库所提供的预训练权重相兼容的 PyTorch 模型 (torch.nn.Module)
+</p>
+</div>
+</div>
+<div id="outline-container-orga0f6ae3" class="outline-3">
+<h3 id="orga0f6ae3"><span class="section-number-3">4.2.</span> Configuration classes</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+存储构建模型所需的超参数, 如层数和隐藏单元数量
+</p>
+</div>
+</div>
+<div id="outline-container-org8d7ff6c" class="outline-3">
+<h3 id="org8d7ff6c"><span class="section-number-3">4.3.</span> Preprocessing classes</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+将raw data转化为模型可接受的格式, <a href="https://huggingface.co/docs/transformers/main_classes/tokenizer">Tokenizer</a> 存储每个模型的字典、提供将字符串编解码为送入模型的 token embedding indices 的方法
+</p>
+
+<p>
+这三个类都可以从预训练实例中实例化(<code>from_pretrained</code>)、保存在本地(<code>save_pretrained</code>)、共享到 HuggingFace Hub(<code>push_to_hub</code>):
+</p>
+</div>
+</div>
+</div>
+<div class="taglist"></div></div>
+<div id="postamble" class="status"></div>
+</body>
+</html>

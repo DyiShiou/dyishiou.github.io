@@ -1,0 +1,23 @@
+#+title: 双路4090装机方案
+#+date: <2024-01-02 09:50>
+#+description: 
+#+filetags: 
+
+* 配置清单
+| device      | type                                  | remark |
+|-------------+---------------------------------------+--------|
+| Motherboard | ASUS PRIME X299-DELUXE II             |        |
+| CPU         | 10920x                                |        |
+| CPU Fan     | NOCTUA NH-D15                         |        |
+| Power       | Seasonic Titanium TX1600W             | TBD    |
+| Memory      | Kingston DDR4 2666 64g                |        |
+| SSD         | SAMSUNG 980 PRO 2TB / SN810 512GB     |        |
+| HDD         | WD40EJRX 4TB / WD43PURZ 4TB           |        |
+| Case        | PHANTEKS ENTHOO PRO II Server Edition |        |
+| GPU         | MSI X TRIO 24G                        |        |
+
+* 一些感受
+1. 最好不要自己承担计算设备的开销, 在校企合作的模式下, 计算设备可以由企业承担
+2. 在不得已自己购买算力的情况下, 最好一次性买到最高规格的设备, 这样具有较好的拓展性
+3. 买设备的时候最好买被市场普遍认可的设备, 如笔记本购买MacBook而非其他PC笔记本, 具有较高的保值率
+4. 模型压缩是一个很好的研究方向, 所谓穷有穷的玩法, 富有富的玩法

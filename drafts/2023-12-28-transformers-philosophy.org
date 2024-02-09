@@ -1,0 +1,39 @@
+#+title: HuggingFace Transformers 设计哲学
+#+date: <2023-12-28 22:11>
+#+description: 
+#+filetags: 
+
+* 面向群体
+1. 致力于使用、研究、拓展大规模 Transformer 模型的机器学习研究者
+2. 希望微调或在生产中部署大规模 Transformer 模型的实践者
+3. 只想下载一个预训练模型并用于解决给定机器学习任务的工程师
+
+* 两个核心目标
+** 简单和快捷的使用体验
+1. 最大程度地限制用户侧的抽象概念, 只有三个标准类: [[https://huggingface.co/docs/transformers/main_classes/configuration][配置]]、[[https://huggingface.co/docs/transformers/main_classes/model][模型]]、预处理类。预处理类包括NLP的[[https://huggingface.co/docs/transformers/main_classes/tokenizer][Tokenizer]], Vision的[[https://huggingface.co/docs/transformers/main_classes/image_processor][image processor]], audio的[[https://huggingface.co/docs/transformers/main_classes/feature_extractor][feature extractor]], multimodal的[[https://huggingface.co/docs/transformers/main_classes/processors][processor]]
+2. 所有类均可以通过 =from_pretrained()= 方法从预训练实例初始化, =from_pretrained()= 方法会从 HuggingFace Hub 或 checkpoint 下载、缓存、加载相关的实例和数据, 包括配置的超参数、tokenizer的词表、模型权重
+3. 在 配置、模型、预处理 这三个基类之上, 提供 =pipeline()= 用于模型推理、 =Trainer= 用于快速训练和微调 PyTorch 模型
+4. Transformers 库并非构建神经网络的模块工具箱, 若想要基于 Transformers 进行扩展或构建, 只需要使用 Python, PyTorch 的常规模块, 并继承 Transformers 库的基类以复用模型加载、模型保存的功能
+** 提供具备接近原始模型性能的SOTA模型
+1. 每种架构至少具备一个可以复现官方结果的示例
+2. 与原始代码尽可能贴近
+
+* 其他目标
+** 一致地暴露模型内部结构
+1. 提供一个API, 访问全部隐藏状态和注意力权重
+2. 提供标准化的 预处理类和基类模型 API, 便于在不同模型间切换
+** 包含用于微调和研究模型的有效工具
+1. 一种简单、一致的向词表和embeddings添加新token, 并用于微调的方式
+2. 掩码 和 剪枝 Transformer head 的简单方法
+** 在 PyTorch, TensorFlow, Flax 间方便地切换, 支持训练和推理使用不同框架
+
+* 主要概念
+HuggingFace Transformers 库中的每个模型建立在三个类之上
+** Model classes
+与 Transformers 库所提供的预训练权重相兼容的 PyTorch 模型 (torch.nn.Module)
+** Configuration classes
+存储构建模型所需的超参数, 如层数和隐藏单元数量
+** Preprocessing classes
+将raw data转化为模型可接受的格式, [[https://huggingface.co/docs/transformers/main_classes/tokenizer][Tokenizer]] 存储每个模型的字典、提供将字符串编解码为送入模型的 token embedding indices 的方法
+
+这三个类都可以从预训练实例中实例化(=from_pretrained=)、保存在本地(=save_pretrained=)、共享到 HuggingFace Hub(=push_to_hub=):
